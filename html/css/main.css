@@ -1,0 +1,545 @@
+@font-face {
+  font-family: "Otomanpee One";
+  src: url("../fonts/ttf/OtomanopeeOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.news-main {
+  padding: 60px 20px;
+  min-height: 70vh;
+}
+
+.news-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.news-title {
+  font-size: 40px;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  margin-bottom: 40px;
+  font-family: "Otomanpee One", sans-serif;
+}
+
+.news-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.news-heading {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.news-date {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  margin-right: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.news-image {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.news-text {
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* =========================
+    アクセスページ
+========================= */
+
+.access-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.access-main_section {
+  margin-bottom: 44px;
+}
+
+/* タイトル */
+.access-main_title {
+  font-size: 40px;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  font-family: "Otomanpee One", sans-serif;
+  text-align: center;
+}
+
+/* 地図 */
+.access-main_map {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.access-main_map-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: inline-block;
+}
+
+/* =========================
+   地図下：2カラム情報
+========================= */
+.access-main_info2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.access-main_infoTitle {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
+
+.access-main_infoText {
+  font-size: 14px;
+  line-height: 1.9;
+  font-weight: 600;
+}
+
+.access-main_infoText p {
+  margin: 0;
+}
+
+/* =========================
+   送迎バス（見出し＋下線）
+========================= */
+.access-main_busTitle {
+  display: inline-block;
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.55);
+}
+
+/* 送迎バス：左テキスト / 右画像 */
+.access-main_busGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.access-main_busText {
+  font-size: 14px;
+  line-height: 1.9;
+  font-weight: 600;
+}
+
+.access-main_busText p {
+  margin: 0;
+}
+
+.access-main_busImage {
+  justify-self: end;
+  width: min(520px, 100%);
+}
+
+.access-main_busImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .access-main {
+    padding: 28px 16px 60px;
+  }
+
+  .access-main_title {
+    font-size: 24px;
+  }
+
+  .access-main_info2col {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .access-main_busTitle {
+    font-size: 22px;
+  }
+
+  .access-main_busGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .access-main_busImage {
+    justify-self: start;
+    width: min(520px, 100%);
+  }
+}
+
+.contact-main {
+  background: #f8d7e6;
+  padding: 60px 20px;
+  min-height: 70vh;
+}
+
+/* =========================
+問い合わせ
+========================= */
+.contact-main {
+  background: #f8d7e6;
+  padding: 60px 20px;
+  min-height: 70vh;
+}
+
+.contact-main_top {
+  max-width: 900px;
+  margin: 0 auto 44px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+/* 各ブロック */
+.contact-main_col {
+  width: 100%;
+}
+
+/* タイトル */
+.contact-main_title {
+  margin: 16px;
+  font-size: 34px;
+  font-weight: 900;
+  font-family: "Otomanpee One", sans-serif;
+}
+
+/* リード文 */
+.contact-main_lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 900;
+}
+
+/* 見出し */
+.contact-main_heading {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+/* 電話 */
+.contact-main_tel {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* 募集文 */
+.contact-main_text {
+  margin: 0;
+  line-height: 2;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+/* =========================
+   スマホ
+========================= */
+@media (max-width: 768px) {
+  .contact-main {
+    padding: 40px 16px 60px;
+  }
+
+  .contact-main_top {
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+
+  .contact-main_title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .contact-main_heading {
+    font-size: 20px;
+  }
+
+  .contact-main_tel {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   フォーム
+========================= */
+
+.contact-main_formWrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-main_formTitle {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.contact-main_row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.contact-main_row label {
+  text-align: right;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.contact-main_row input,
+.contact-main_row textarea {
+  width: 100%;
+  border: none;
+  background: #ffffff;
+  padding: 6px 8px;
+}
+
+.contact-main_row textarea {
+  min-height: 100px;
+}
+
+.contact-main_row--radio {
+  align-items: start;
+}
+
+.contact-main_radios {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-main_radios label {
+  text-align: center;
+  text-indent: -5px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.contact-main_actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-main_actions button {
+  border: none;
+  padding: 10px 28px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 768px) {
+  .contact-main_top {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-main_row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-main_row label {
+    text-align: left;
+  }
+}
+
+/* =========================
+   TOP MAIN (Scoped)
+   ※ <main class="top-main"> 内だけに適用
+========================= */
+
+.top-main {
+  background: #f8d7e6;
+  /* スクショの薄ピンク */
+  padding: 18px 0 40px;
+}
+
+/* 中央コンテンツ幅 */
+.top-main_hero,
+.top-main_noticeInner,
+.top-main_cards {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+/* =========================
+   HERO
+========================= */
+.top-main_hero {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.top-main_heroImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   NOTICE BAR
+========================= */
+.top-main_notice {
+  margin-top: 10px;
+}
+
+.top-main_noticeInner {
+  background: #f3b8cd;
+  /* 濃いめピンク帯 */
+  border-radius: 6px;
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.top-main_noticeLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.top-main_noticeTitle {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.top-main_noticeText {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.top-main_noticeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #111;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.top-main_noticeBtn:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* =========================
+   CARDS (2x2)
+========================= */
+.top-main_cards {
+  margin-top: 18px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.top-main_card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-main_cardImgWrap {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.top-main_cardImg {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  /* スクショに近い比率 */
+  object-fit: cover;
+  display: block;
+}
+
+.top-main_cardLink {
+  text-align: center;
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .top-main {
+    padding: 14px 0 30px;
+  }
+
+  .top-main_noticeInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-main_noticeBtn {
+    align-self: flex-end;
+  }
+
+  .top-main_cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

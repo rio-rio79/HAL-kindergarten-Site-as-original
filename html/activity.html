@@ -1,0 +1,1061 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ようちえんのかつどう | ハル幼稚園</title>
+    <style>
+      @font-face {
+        font-family: "Otomanopee One";
+        src: url("fonts/ttf/OtomanopeeOne-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Post+No+Bills+Colombo:wght@600&display=swap");
+
+      :root {
+        --pink: #ffdaf4;
+        --pink2: #fde7ef;
+        --text: #222;
+        --muted: #666;
+        --line: #111;
+        --card: #fff;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        --radius: 18px;
+        --max: 1080px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Hiragino Kaku Gothic ProN",
+          "Noto Sans JP",
+          "Yu Gothic",
+          Meiryo,
+          sans-serif;
+        color: var(--text);
+        background: #ffdaf4;
+        line-height: 1.6;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* ===== Template Header ===== */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+      }
+      .header-logo img {
+        height: 48px;
+        width: auto;
+        display: block;
+      }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .contact-button {
+        background-color: #fff0dc;
+        padding: 8px 35px;
+        border-radius: 50px;
+        color: #000;
+        font-weight: 600;
+        margin-right: 50px;
+        font-family: "Post No Bills Colombo Extrabold", sans-serif;
+      }
+      .hamburger-button {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        margin-right: 25px;
+        z-index: 2000;
+      }
+      .hamburger-line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #222;
+        margin: 5px auto;
+        transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
+      }
+      .global-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 320px;
+        max-width: 86vw;
+        height: 100vh;
+        background: #fff;
+        border-left: 1px solid #e5e5e5;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08);
+        padding: 72px 20px 20px;
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+        z-index: 1100;
+      }
+      .global-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .global-menu-list a {
+        padding: 12px 10px;
+        display: block;
+        font-weight: 700;
+        border-radius: 10px;
+      }
+      .global-menu-list a:hover {
+        background: #f5f5f5;
+      }
+      .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 1050;
+      }
+      .menu-open .global-menu {
+        transform: translateX(0);
+      }
+      .menu-open .menu-overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .menu-open .hamburger-line:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      .menu-open .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-open .hamburger-line:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 220px;
+      }
+      .brand-logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #7bdcb5, #8fd3ff, #ffb3c7);
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: 0.02em;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .brand-text small {
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .brand-text strong {
+        font-size: 18px;
+        letter-spacing: 0.03em;
+      }
+
+      /* ===== Hero ===== */
+      .hero {
+        position: relative;
+        height: min(56vh, 520px);
+        min-height: 340px;
+        overflow: hidden;
+        background: #eee;
+      }
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.02) contrast(1.02);
+        transform: scale(1.02);
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.06),
+          rgba(0, 0, 0, 0.02),
+          rgba(0, 0, 0, 0)
+        );
+        pointer-events: none;
+      }
+      .hero-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Otomanopee One", sans-serif;
+        font-weight: 900;
+        font-size: clamp(26px, 4vw, 44px);
+        color: #111;
+        text-shadow: 0 4px 18px rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.04em;
+      }
+
+      /* ===== Layout blocks ===== */
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .pink-band {
+        background: var(--pink);
+        padding: 18px 0 24px;
+      }
+      .section-title,
+      .subhead {
+        position: relative;
+        display: inline-block;
+        margin: 0 0 5px;
+        padding: 4px 0 8px 54px;
+        font-weight: 900;
+        font-size: clamp(18px, 1.7vw, 24px);
+        letter-spacing: 0.04em;
+        line-height: 1.25;
+        color: #1f1f1f;
+        background: transparent;
+      }
+      .section-title::before,
+      .subhead::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 42px;
+        height: 42px;
+        background: url("images/huusen.png") center / contain no-repeat;
+        transform: translateY(-58%);
+      }
+      .section-title::after,
+      .subhead::after {
+        content: none;
+      }
+
+      /* ===== Timeline card ===== */
+      .timeline-card {
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 0;
+        overflow: hidden;
+      }
+      .timeline-grid {
+        position: relative;
+      }
+      @media (max-width: 860px) {
+        .timeline-grid {
+          position: static;
+        }
+      }
+
+      .timeline {
+        background: transparent;
+        border-radius: 0;
+        padding: 2px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .timeline ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 34px;
+        position: relative;
+      }
+      .timeline ul::before {
+        content: "";
+        position: absolute;
+        left: 99px;
+        top: 36px;
+        bottom: 34px;
+        width: 2px;
+        background: var(--line);
+        border-radius: 999px;
+        opacity: 0.85;
+      }
+      .timeline li {
+        display: grid;
+        grid-template-columns: 84px 1fr;
+        gap: 18px;
+        padding: 4px 20px 4px 10px;
+        min-height: 34px;
+        border-radius: 0;
+        align-items: center;
+        font-weight: 700;
+      }
+      .timeline li:nth-child(even) {
+        background: rgba(247, 199, 214, 0.35);
+      }
+      .timeline .time {
+        color: #111;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+        padding-right: 14px;
+        align-self: end;
+        transform: translateY(74%);
+        line-height: 1;
+      }
+      .timeline .label {
+        color: #111;
+        align-self: center;
+      }
+      .timeline .note {
+        display: block;
+        margin-top: 1px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+      .timeline li::before {
+        content: "";
+        position: absolute;
+        left: 95px;
+        width: 10px;
+        height: 10px;
+        background: #111;
+        border-radius: 50%;
+        transform: translateY(0);
+        margin-top: 0;
+      }
+      /* li::before を各行に合わせる */
+      .timeline li {
+        position: relative;
+      }
+      .timeline li::before {
+        top: 100%;
+        transform: translateY(-50%);
+      }
+      .timeline-side {
+        position: absolute;
+        right: 120px;
+        bottom: 94px;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .timeline-side-top {
+        top: 62px;
+        bottom: auto;
+        left: 50%;
+        right: auto;
+        transform: translateX(calc(-50% - 20px));
+      }
+      .timeline-side-top .oval-photo {
+        width: min(280px, 36vw);
+      }
+      .oval-photo {
+        width: min(260px, 33vw);
+        aspect-ratio: 16 / 10;
+        border-radius: 999px;
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+        border: 8px solid rgba(255, 255, 255, 0.6);
+      }
+      .oval-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media (max-width: 860px) {
+        .timeline-side {
+          position: static;
+          display: flex;
+          justify-content: center;
+          margin: 10px 0 8px;
+          pointer-events: auto;
+        }
+        .oval-photo {
+          width: min(320px, 92%);
+        }
+      }
+
+      /* ===== After school text ===== */
+      .after-text {
+        position: relative;
+        text-align: center;
+        padding: 20px 28px 18px;
+        max-width: 760px;
+        margin: 32px auto 0;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.75) 0%,
+          rgba(255, 251, 253, 0.62) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.92);
+        border-radius: 28px;
+        box-shadow: 0 14px 28px rgba(183, 99, 137, 0.08);
+        backdrop-filter: blur(6px);
+      }
+      .after-text::before {
+        content: none;
+      }
+      .after-text::after {
+        content: "";
+        position: absolute;
+        top: -14px;
+        right: -8px;
+        width: 74px;
+        height: 74px;
+        background: url("images/pen_image.png") center / contain no-repeat;
+        transform: rotate(10deg);
+        opacity: 0.92;
+        pointer-events: none;
+      }
+      .after-text h3 {
+        margin: 0;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        font-size: clamp(20px, 2.2vw, 28px);
+        line-height: 1.35;
+      }
+      .after-text p {
+        margin: 10px auto 0;
+        color: #333;
+        font-weight: 600;
+        max-width: 640px;
+        font-size: clamp(14px, 1.4vw, 17px);
+        line-height: 1.8;
+      }
+      @media (max-width: 640px) {
+        .after-text {
+          padding: 16px 16px 14px;
+          border-radius: 22px;
+        }
+        .after-text::before {
+          content: none;
+        }
+        .after-text::after {
+          width: 52px;
+          height: 52px;
+          top: -8px;
+          right: -4px;
+        }
+        .after-text p {
+          line-height: 1.65;
+        }
+      }
+
+      /* ===== Galleries ===== */
+      .section {
+        padding: 26px 0;
+      }
+      .subhead {
+        margin-bottom: 5px;
+      }
+      @media (max-width: 640px) {
+        .section-title,
+        .subhead {
+          padding: 2px 0 7px 46px;
+          margin-bottom: 16px;
+        }
+        .section-title::before,
+        .subhead::before {
+          width: 36px;
+          height: 36px;
+        }
+        .section-title::after,
+        .subhead::after {
+          left: 1px;
+          bottom: 0;
+          height: 3px;
+        }
+      }
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      @media (max-width: 960px) {
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .thumb {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+        background: #fff;
+      }
+      .thumb img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+      @media (max-width: 520px) {
+        .thumb img {
+          height: 190px;
+        }
+      }
+
+      .news-carousel {
+        overflow: hidden;
+        border-radius: 16px;
+        flex: 0 0 calc(100% - 112px);
+        width: calc(100% - 112px);
+      }
+      .news-track {
+        display: flex;
+        transition: transform 0.45s ease;
+        will-change: transform;
+      }
+      .news-item {
+        flex: 0 0 calc(25% - 10.5px);
+        margin-right: 14px;
+      }
+      .news-item:last-child {
+        margin-right: 0;
+      }
+      @media (max-width: 960px) {
+        .news-item {
+          flex-basis: calc(50% - 7px);
+        }
+      }
+      @media (max-width: 520px) {
+        .news-item {
+          flex-basis: 100%;
+        }
+      }
+
+      /* ===== Simple carousel ===== */
+      .carousel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .car-btn {
+        border: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 900;
+        display: grid;
+        place-items: center;
+        user-select: none;
+      }
+      .car-viewport {
+        overflow: hidden;
+        flex: 0 0 calc(100% - 112px);
+        width: calc(100% - 112px);
+        border-radius: 16px;
+      }
+      .car-track {
+        display: flex;
+        transition: transform 0.25s ease;
+        will-change: transform;
+      }
+      .car-item {
+        flex: 0 0 calc(25% - 10.5px);
+        margin-right: 14px;
+      }
+      .car-item:last-child {
+        margin-right: 0;
+      }
+      @media (max-width: 960px) {
+        .car-item {
+          flex-basis: calc(50% - 7px);
+        }
+      }
+      @media (max-width: 520px) {
+        .car-item {
+          flex-basis: 100%;
+        }
+      }
+
+      /* ===== Template Footer ===== */
+      .site-footer {
+        width: 100%;
+        background: #fff;
+      }
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      .footer-logo {
+        height: 200px;
+        width: auto;
+        display: block;
+      }
+      .footer-nav {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .footer-link {
+        color: #222;
+        font-size: 14px;
+        line-height: 1;
+        white-space: nowrap;
+        text-decoration: none;
+        margin-right: 50px;
+        font-family: "Post No Bills Colombo Extrabold", sans-serif;
+      }
+      .footer-link:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 640px) {
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .footer-logo {
+          height: 38px;
+        }
+        .footer-nav {
+          gap: 12px;
+        }
+      }
+
+      /* utility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="header-logo" href="news.html">
+          <img src="images/ハル幼稚園_logo1.png" alt="幼稚園ロゴ" />
+        </a>
+
+        <div class="header-actions">
+          <a class="contact-button" href="contact.html">お問い合わせ</a>
+          <button
+            class="hamburger-button"
+            type="button"
+            aria-label="メニューを開く"
+            aria-controls="global-menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+
+      <nav id="global-menu" class="global-menu" aria-label="グローバルメニュー">
+        <ul class="global-menu-list">
+          <li><a href="news.html">園について</a></li>
+          <li><a href="news.html">園の特色</a></li>
+          <li><a href="news.html">活動紹介</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="menu-overlay" aria-hidden="true"></div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" aria-label="メインビジュアル">
+      <img src="images/22.jpg" alt="園での活動の様子" />
+      <div class="hero-title">ようちえんのかつどう</div>
+    </section>
+
+    <!-- Pink band: 幼稚園の1日の流れ -->
+    <section class="pink-band" id="about">
+      <div class="wrap">
+        <h2 class="section-title">ハル幼稚園の１日の流れ</h2>
+
+        <div class="timeline-card">
+          <div class="timeline-grid">
+            <div class="timeline" aria-label="1日の流れ">
+              <ul>
+                <li>
+                  <div class="time">8:00</div>
+                  <div class="label"></div>
+                </li>
+                <li>
+                  <div class="time">9:30</div>
+                  <div class="label">登園</div>
+                </li>
+                <li>
+                  <div class="time">9:45</div>
+                  <div class="label">体操</div>
+                </li>
+                <li>
+                  <div class="time">10:00</div>
+                  <div class="label">朝の会</div>
+                </li>
+                <li>
+                  <div class="time">11:20</div>
+                  <div class="label">保育活動</div>
+                </li>
+                <li>
+                  <div class="time">11:40</div>
+                  <div class="label">給食準備</div>
+                </li>
+                <li>
+                  <div class="time">12:10</div>
+                  <div class="label">昼食</div>
+                </li>
+                <li>
+                  <div class="time">12:30</div>
+                  <div class="label">片付け・掃除</div>
+                </li>
+                <li>
+                  <div class="time">13:15</div>
+                  <div class="label">自由遊び</div>
+                </li>
+                <li>
+                  <div class="time">13:30</div>
+                  <div class="label">片付け、降園準備</div>
+                </li>
+                <li>
+                  <div class="time">14:00</div>
+                  <div class="label">お帰りの会</div>
+                </li>
+                <li>
+                  <div class="time">17:00</div>
+                  <div class="label">
+                    降園、預かり保育
+                    <span class="note"
+                      >（お仕事や家庭の事情に合わせて、安心してご利用いただけます。）</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="timeline-side timeline-side-top" aria-label="写真">
+              <div class="oval-photo">
+                <img src="images/02.jpg" alt="朝の会の様子" />
+              </div>
+            </div>
+
+            <div class="timeline-side" aria-label="写真">
+              <div class="oval-photo">
+                <img src="images/20.jpg" alt="先生と子どもたちの様子" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="after-text">
+          <h3>ハル幼稚園は、「塾」も開講しています。</h3>
+          <p>
+            保育時間終了後から専門の先生による課外保育で子どもたちをもっと輝かせたい。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 今日の幼稚園 -->
+    <section class="section" id="news">
+      <div class="wrap">
+        <h2 class="subhead">今日の幼稚園</h2>
+
+        <div class="carousel" aria-label="今日の幼稚園スライダー">
+          <button
+            class="car-btn"
+            type="button"
+            id="newsPrevBtn"
+            aria-label="今日の幼稚園を前へ"
+          >
+            ◀
+          </button>
+
+          <div class="news-carousel">
+            <div class="news-track" id="newsTrack">
+              <div class="news-item thumb">
+                <img src="images/03.jpg" alt="今日の幼稚園1" />
+              </div>
+              <div class="news-item thumb">
+                <img src="images/05.jpg" alt="今日の幼稚園2" />
+              </div>
+              <div class="news-item thumb">
+                <img src="images/07.jpg" alt="今日の幼稚園3" />
+              </div>
+              <div class="news-item thumb">
+                <img src="images/09.jpg" alt="今日の幼稚園4" />
+              </div>
+              <div class="news-item thumb">
+                <img src="images/11.jpg" alt="今日の幼稚園5" />
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="car-btn"
+            type="button"
+            id="newsNextBtn"
+            aria-label="今日の幼稚園を次へ"
+          >
+            ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 作品紹介（カルーセル） -->
+    <section class="section" id="facility" style="padding-top: 0">
+      <div class="wrap">
+        <h2 class="subhead">作品紹介</h2>
+
+        <div class="carousel" aria-label="作品紹介スライダー">
+          <button class="car-btn" type="button" id="prevBtn" aria-label="前へ">
+            ◀
+          </button>
+
+          <div class="car-viewport">
+            <div class="car-track" id="carTrack">
+              <div class="car-item thumb">
+                <img src="images/19.jpg" alt="作品1" />
+              </div>
+              <div class="car-item thumb">
+                <img src="images/21.jpg" alt="作品2" />
+              </div>
+              <div class="car-item thumb">
+                <img src="images/18.jpg" alt="作品3" />
+              </div>
+              <div class="car-item thumb">
+                <img src="images/06.jpg" alt="作品4" />
+              </div>
+              <div class="car-item thumb">
+                <img src="images/04.jpg" alt="作品5" />
+              </div>
+            </div>
+          </div>
+
+          <button class="car-btn" type="button" id="nextBtn" aria-label="次へ">
+            ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="footer-brand" href="news.html" aria-label="トップへ">
+          <img
+            class="footer-logo"
+            src="images/ハル幼稚園_logo2.png"
+            alt="ハル幼稚園 ロゴ"
+          />
+        </a>
+
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a class="footer-link" href="news.html">お知らせ</a>
+          <a class="footer-link" href="news.html">ハル幼稚園について</a>
+          <a class="footer-link" href="news.html">事業案内</a>
+          <a class="footer-link" href="contact.html">施設紹介</a>
+          <a class="footer-link" href="contact.html">採用情報</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      function openMenu() {
+        document.body.classList.add("menu-open");
+        document.body.style.overflow = "hidden";
+
+        const button = document.querySelector(".hamburger-button");
+        if (button) {
+          button.setAttribute("aria-expanded", "true");
+          button.setAttribute("aria-label", "メニューを閉じる");
+        }
+      }
+      function closeMenu() {
+        document.body.classList.remove("menu-open");
+        document.body.style.overflow = "";
+
+        const button = document.querySelector(".hamburger-button");
+        if (button) {
+          button.setAttribute("aria-expanded", "false");
+          button.setAttribute("aria-label", "メニューを開く");
+        }
+      }
+      function toggleMenu() {
+        const isOpen = document.body.classList.contains("menu-open");
+        if (isOpen) closeMenu();
+        else openMenu();
+      }
+      const menuBtn = document.querySelector(".hamburger-button");
+      const menuOverlay = document.querySelector(".menu-overlay");
+      const menuPanel = document.getElementById("global-menu");
+      if (menuBtn) menuBtn.addEventListener("click", toggleMenu);
+      if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+      if (menuPanel) {
+        menuPanel.addEventListener("click", (e) => {
+          if (e.target && e.target.tagName === "A") closeMenu();
+        });
+      }
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      // ===== Carousel =====
+      const newsTrack = document.getElementById("newsTrack");
+      const newsPrevBtn = document.getElementById("newsPrevBtn");
+      const newsNextBtn = document.getElementById("newsNextBtn");
+      const track = document.getElementById("carTrack");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      const sliderState = {
+        newsAnimating: false,
+        worksAnimating: false,
+      };
+
+      function getSlideWidth(sliderTrack) {
+        const item = sliderTrack.children[0];
+        if (!item) return 0;
+        const gap = 14;
+        return item.getBoundingClientRect().width + gap;
+      }
+
+      function advanceLoop(sliderTrack, flagName) {
+        if (!sliderTrack || sliderState[flagName]) return;
+        const distance = getSlideWidth(sliderTrack);
+        if (!distance) return;
+
+        sliderState[flagName] = true;
+        sliderTrack.style.transition = "transform 0.45s ease";
+        sliderTrack.style.transform = `translateX(${-distance}px)`;
+
+        const onEnd = () => {
+          sliderTrack.appendChild(sliderTrack.children[0]);
+          sliderTrack.style.transition = "none";
+          sliderTrack.style.transform = "translateX(0)";
+          sliderTrack.offsetHeight;
+          sliderTrack.style.transition = "transform 0.45s ease";
+          sliderState[flagName] = false;
+          sliderTrack.removeEventListener("transitionend", onEnd);
+        };
+
+        sliderTrack.addEventListener("transitionend", onEnd);
+      }
+
+      function rewindLoop(sliderTrack, flagName) {
+        if (!sliderTrack || sliderState[flagName]) return;
+        const distance = getSlideWidth(sliderTrack);
+        if (!distance) return;
+
+        sliderState[flagName] = true;
+        sliderTrack.style.transition = "none";
+        sliderTrack.insertBefore(
+          sliderTrack.children[sliderTrack.children.length - 1],
+          sliderTrack.children[0],
+        );
+        sliderTrack.style.transform = `translateX(${-distance}px)`;
+        sliderTrack.offsetHeight;
+        sliderTrack.style.transition = "transform 0.45s ease";
+        sliderTrack.style.transform = "translateX(0)";
+
+        const onEnd = () => {
+          sliderState[flagName] = false;
+          sliderTrack.removeEventListener("transitionend", onEnd);
+        };
+
+        sliderTrack.addEventListener("transitionend", onEnd);
+      }
+
+      if (newsPrevBtn) {
+        newsPrevBtn.addEventListener("click", () => {
+          rewindLoop(newsTrack, "newsAnimating");
+        });
+      }
+      if (newsNextBtn) {
+        newsNextBtn.addEventListener("click", () => {
+          advanceLoop(newsTrack, "newsAnimating");
+        });
+      }
+      prevBtn.addEventListener("click", () => {
+        rewindLoop(track, "worksAnimating");
+      });
+      nextBtn.addEventListener("click", () => {
+        advanceLoop(track, "worksAnimating");
+      });
+      window.addEventListener("resize", () => {
+        newsTrack.style.transition = "none";
+        newsTrack.style.transform = "translateX(0)";
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+      });
+
+      setInterval(() => {
+        advanceLoop(newsTrack, "newsAnimating");
+      }, 2800);
+
+      setInterval(() => {
+        advanceLoop(track, "worksAnimating");
+      }, 3000);
+
+      // 初期化
+      newsTrack.style.transform = "translateX(0)";
+      track.style.transform = "translateX(0)";
+    </script>
+  </body>
+</html>

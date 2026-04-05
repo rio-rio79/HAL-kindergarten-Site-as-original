@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="style.js" defer></script>
+    <title>ようちえんについて | ハル幼稚園</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Post+No+Bills+Colombo:wght@600&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ffdaf4;
+        font-family: "Post No Bills Colombo", sans-serif;
+        font-weight: 600;
+        color: #000;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      /* --- ようちえんについて --- */
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        gap: 20px;
+        margin-bottom: 34px;
+      }
+
+      .title__text {
+        font-family: "Otomanopee One", sans-serif;
+        font-size: 52px;
+        margin: 0;
+        text-align: center;
+        line-height: 1.1;
+      }
+
+      .title__image01 {
+        width: 54px;
+        transform: translateY(-6px) rotate(0deg);
+      }
+      .title__image02 {
+        width: 84px;
+        transform: translateY(-12px);
+      }
+
+      /* 園長セクション */
+      .intro__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 48px;
+        margin-bottom: 60px;
+      }
+
+      .left-column {
+        width: 250px;
+        text-align: left;
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .entyou__image {
+        width: 100%;
+        border-radius: 20px;
+      }
+
+      .entyou__greet {
+        font-family: "Otomanopee One", sans-serif;
+        font-size: 16px;
+        margin: 15px 0;
+        text-align: center;
+        line-height: 1.3;
+      }
+
+      .intro__image {
+        position: absolute;
+        top: 344px;
+        left: 196px;
+        width: 42px;
+        margin-left: 0;
+        transform: rotate(0deg);
+      }
+
+      .intro__text {
+        position: relative;
+        background-color: #fff0dc;
+        border-radius: 30px;
+        padding: 40px;
+        flex: 1;
+        font-size: 20px;
+        min-height: 380px;
+        text-align: center;
+      }
+
+      .intro__text::before {
+        content: "";
+        position: absolute;
+        top: 138px;
+        left: -26px;
+        width: 0;
+        height: 0;
+        border-top: 22px solid transparent;
+        border-bottom: 22px solid transparent;
+        border-right: 34px solid #fff0dc;
+      }
+
+      .intro__text p,
+      .package__content__text,
+      .footer__content__text {
+        margin: 0;
+      }
+
+      /* --- SIあそびセクション --- */
+      .main__comtent {
+        margin-top: 80px;
+        position: relative;
+      }
+
+      .main__title {
+        text-align: left;
+        font-size: 38px;
+        margin: 0 0 40px 22px;
+        display: block;
+      }
+
+      .main__image01 {
+        position: absolute;
+        top: 2px;
+        right: 150px;
+        width: 56px;
+        transform: rotate(0deg);
+      }
+
+      .main__package {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+          "img1 content"
+          "txt1 content"
+          "img2 content"
+          "txt2 content";
+        gap: 10px 30px;
+        align-items: center;
+      }
+
+      .package__image01 {
+        grid-area: img1;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+      .package__text01:nth-of-type(1) {
+        grid-area: txt1;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .package__image02 {
+        grid-area: img2;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+      .package__text01:nth-of-type(2) {
+        grid-area: txt2;
+        text-align: center;
+      }
+
+      .package__content {
+        grid-area: content;
+        background-color: #fff0dc;
+        padding: 45px;
+        border-radius: 30px;
+        font-size: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .package__content__text {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* --- 特別講師セクション --- */
+      .footer__content {
+        margin-top: 60px;
+      }
+
+      .footer__content__title {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+
+      .footer__content__text {
+        background-color: #fff0dc;
+        padding: 30px 40px;
+        border-radius: 30px;
+        font-size: 20px;
+        line-height: 1.8;
+        text-align: center;
+      }
+
+      .footer__content__text span {
+        display: block;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      /* ===== Site Footer ===== */
+      .site-footer {
+        margin-top: 80px;
+      }
+
+      /* レスポンシブ */
+      @media (max-width: 768px) {
+        .intro__content,
+        .main__package {
+          display: block;
+        }
+
+        .title__text {
+          font-size: 34px;
+        }
+
+        .title__image01,
+        .title__image02,
+        .main__image01 {
+          display: none;
+        }
+
+        .left-column,
+        .intro__text,
+        .package__content {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .intro__text::before {
+          display: none;
+        }
+
+        .left-column {
+          max-width: 250px;
+          margin: 0 auto 20px;
+        }
+
+        .intro__image {
+          position: static;
+          margin-left: auto;
+          margin-right: 8px;
+        }
+
+        .package__image01,
+        .package__image02 {
+          margin: 0 auto 12px;
+        }
+
+        .package__text01 {
+          text-align: center;
+          margin: 0 0 20px;
+        }
+
+        .main__title,
+        .footer__content__title {
+          font-size: 28px;
+        }
+
+        .main__title {
+          margin-left: 0;
+          text-align: center;
+        }
+
+        .intro__text,
+        .package__content,
+        .footer__content__text {
+          padding: 24px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- ロゴ -->
+        <a class="header-logo" href="activity.html">
+          <img src="images/ハル幼稚園_logo1.png" alt="幼稚園ロゴ" />
+        </a>
+
+        <!-- 右側 -->
+        <div class="header-actions">
+          <a class="contact-button" href="contact.html">お問い合わせ</a>
+
+          <!-- ハンバーガー（常時表示） -->
+          <button
+            class="hamburger-button"
+            type="button"
+            aria-label="メニューを開く"
+            aria-controls="global-menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ドロワー -->
+      <nav id="global-menu" class="global-menu" aria-label="グローバルメニュー">
+        <ul class="global-menu-list">
+          <li><a href="About.html">園について</a></li>
+          <li><a href="activity.html">園の特色</a></li>
+          <li><a href="activity.html">活動紹介</a></li>
+          <li><a href="html/contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="menu-overlay" aria-hidden="true"></div>
+    </header>
+
+    <main class="main">
+      <div class="title">
+        <img
+          src="images/pen_image.png"
+          alt="ペンのイラスト"
+          class="title__image01"
+        />
+        <h1 class="title__text">ようちえんについて</h1>
+        <img
+          src="images/huusen.png"
+          alt="ふうせんのイラスト"
+          class="title__image02"
+        />
+      </div>
+
+      <div class="intro__content">
+        <div class="left-column">
+          <img
+            src="images/園長.png"
+            alt="園長先生の写真"
+            class="entyou__image"
+          />
+          <p class="entyou__greet">ハル幼稚園<br />松本タカヒロ園長</p>
+          <img
+            src="images/pen_image.png"
+            alt="ペンのイラスト"
+            class="intro__image"
+          />
+        </div>
+        <div class="intro__text">
+          <p>
+            お子様のすばらしい能力を花咲かせます。<br />
+            大切なお子様お一人おひとりの個性を輝かせるよう教職員<br />
+            一同、一生懸命がんばっています！ぜひ、大切な幼児期の<br />
+            教育をハル幼稚園にお任せください。<br />
+            また、様々なニーズにお応えするよう努めています。<br />
+            どろんこ遊びやお絵かきなどののびのび保育から、英語・<br />
+            体操・プール・音楽やパソコン・知能教育まで、<br />
+            3歳児から全員の方に保育料の中ですべて体験していただ<br />
+            き、社会性を身につけ、心を育てることなどすべてにバラン<br />
+            スの取れた教育を行います。
+          </p>
+        </div>
+      </div>
+
+      <div class="main__comtent">
+        <h2 class="main__title">ハル幼稚園といえば・・・ 『SIあそび』</h2>
+        <img
+          src="images/pen_image.png"
+          alt="ペンのイラスト"
+          class="main__image01"
+        />
+        <div class="main__package">
+          <img
+            src="images/06_編集済み.png"
+            alt="SIあそびの様子"
+            class="package__image01"
+          />
+          <p class="package__text01">SIあそびの様子</p>
+          <img
+            src="images/07_編集済み.png"
+            alt="パソコン教室の様子"
+            class="package__image02"
+          />
+          <p class="package__text01">パソコン教室の様子</p>
+          <div class="package__content">
+            <p class="package__content__text">
+              『SIあそび』とは、遊びながら知能を高める英才教育<br />
+              です。ハル幼稚園では、お子様一人ひとりが、自ら考<br />
+              え、気づき、創意工夫する力、思考する力を養うこと<br />
+              （知能教育）を目的として、別教材を使用していま<br />
+              す。<br />
+              お話をよく聞き、集中してお勉強というのがハル幼稚<br />
+              園の最大の特徴です。しからないでほめて、みんなニ<br />
+              コニコ。<br />
+              「叱らない教育方法」は、20年以上の研究の成果で<br />
+              す。「どろんこ遊び」から「英才教育」までがハル幼<br />
+              稚園の今日という方針です。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__content__title">
+          3才からは特別講師による指導も行っています！！
+        </h3>
+        <p class="footer__content__text">
+          ・絵画造形教育 ・英語教育 ・プール指導 ・体操 ・声楽指導<br />
+          ・中国語（年長5才のみ） ・パソコン使ってのローマ字指導(年長5才のみ)
+          など・・・<br />
+          <span
+            >※普通保育の中で行いますので、保育料は別途徴収はいたしません。</span
+          >
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="footer-brand" href="activity.html" aria-label="トップへ">
+          <img
+            class="footer-logo"
+            src="images/ハル幼稚園_logo2.png"
+            alt="ハル幼稚園 ロゴ"
+          />
+        </a>
+
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a class="footer-link" href="html/news.html">お知らせ</a>
+          <a class="footer-link" href="About.html">ハル幼稚園について</a>
+          <a class="footer-link" href="activity.html">事業案内</a>
+          <a class="footer-link" href="html/access.html">施設紹介</a>
+          <a class="footer-link" href="html/contact.html">採用情報</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

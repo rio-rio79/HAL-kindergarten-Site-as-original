@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アクセス</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://db.onlinewebfonts.com/c/aac28a8d3a17309e7f5bd19aadcd7915?family=Post+No+Bills+Colombo+ExtraBold"
+      rel="stylesheet"
+    />
+     <script src="../style.js" ></script>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- ロゴ -->
+        <a class="header-logo" href="index.html">
+          <img src="images/ハル幼稚園_logo1.png" alt="幼稚園ロゴ" />
+        </a>
+
+        <!-- 右側 -->
+        <div class="header-actions">
+          <a class="contact-button" href="contact.html">お問い合わせ</a>
+
+          <!-- ハンバーガー（常時表示） -->
+          <button
+            class="hamburger-button"
+            type="button"
+            aria-label="メニューを開く"
+            aria-controls="global-menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ドロワー -->
+      <nav id="global-menu" class="global-menu" aria-label="グローバルメニュー">
+        <ul class="global-menu-list">
+          <li><a href="index.html#about">園について</a></li>
+          <li><a href="index.html#experience">園の特色</a></li>
+          <li><a href="index.html#projects">活動紹介</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="menu-overlay" aria-hidden="true"></div>
+    </header>
+
+    <!-- メイン -->
+
+    <main class="contact-main">
+      <!-- 上段エリア -->
+      <section class="contact-main_top">
+        <div class="contact-main_col">
+          <h1 class="contact-main_title">おといあわせ</h1>
+          <p class="contact-main_lead">
+            ハル幼稚園へのお問い合わせは下記よりお気軽にお問い合わせください。<br />
+            また、資料請求もお待ちしております。
+          </p>
+        </div>
+
+        <div class="contact-main_col">
+          <h2 class="contact-main_heading">
+            お電話にてお問い合わせ・ご請求の方
+          </h2>
+          <p class="contact-main_tel">TEL：03-3344-1010</p>
+        </div>
+
+        <div class="contact-main_col">
+          <h2 class="contact-main_heading">職員募集のお知らせ</h2>
+          <p class="contact-main_text">
+            幼稚園教諭（正職員・パート職員）、調理員を募集しています。<br />
+            お気軽にお問い合わせください。
+          </p>
+        </div>
+      </section>
+
+      <!-- フォームエリア -->
+      <section class="contact-main_formWrap">
+        <h2 class="contact-main_formTitle">お問い合わせフォーム</h2>
+
+        <form class="contact-main_form">
+          <div class="contact-main_row">
+            <label>フリガナ</label>
+            <input type="text" />
+          </div>
+
+          <div class="contact-main_row">
+            <label>氏名</label>
+            <input type="text" />
+          </div>
+
+          <div class="contact-main_row">
+            <label>電話番号</label>
+            <input type="text" />
+          </div>
+
+          <div class="contact-main_row">
+            <label>メールアドレス</label>
+            <input type="text" />
+          </div>
+
+          <div class="contact-main_row">
+            <label>メールアドレス(確認)</label>
+            <input type="text" />
+          </div>
+
+          <div class="contact-main_row contact-main_row--radio">
+            <label>お問い合わせ項目</label>
+
+            <div class="contact-main_radios">
+              <label><input type="radio" name="cat" checked /> 資料請求</label>
+              <label><input type="radio" name="cat" /> 職員募集</label>
+              <label><input type="radio" name="cat" /> その他</label>
+            </div>
+          </div>
+
+          <div class="contact-main_row contact-main_row--textarea">
+            <label>お問い合わせ内容</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="contact-main_actions">
+            <button type="submit">送信</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- ロゴ（左） -->
+        <a class="footer-brand" href="index.html" aria-label="トップへ">
+          <img
+            class="footer-logo"
+            src="images/ハル幼稚園_logo2.png"
+            alt="ハル幼稚園 ロゴ"
+          />
+        </a>
+
+        <!-- ナビ（右） -->
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a class="footer-link" href="index.html#about">お知らせ</a>
+          <a class="footer-link" href="index.html#experience"
+            >ハル幼稚園について</a
+          >
+          <a class="footer-link" href="index.html#projects">事業案内</a>
+          <a class="footer-link" href="index.html#facilities">施設紹介</a>
+          <a class="footer-link" href="contact.html">採用情報</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="../js/style.js"></script>
+    <!-- ここまでフッター -->
+  </body>
+</html>
