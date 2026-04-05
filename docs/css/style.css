@@ -52,7 +52,8 @@ body {
   font-size: 18px;
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-right: 50px; /* 右側のスペースを確保 */
+  margin-right: 50px;
+  /* 右側のスペースを確保 */
 }
 
 /* ===== Hamburger（常時表示） ===== */
@@ -186,7 +187,8 @@ body {
 }
 
 .footer-logo {
-  height: 200px; /* ←右図のような小さめ感 */
+  height: 200px;
+  /* ←右図のような小さめ感 */
   width: auto;
   display: block;
 }
@@ -195,8 +197,10 @@ body {
 .footer-nav {
   display: flex;
   align-items: center;
-  gap: 22px; /* リンク同士の間隔 */
-  flex-wrap: wrap; /* 画面が狭い時は折り返す */
+  gap: 22px;
+  /* リンク同士の間隔 */
+  flex-wrap: wrap;
+  /* 画面が狭い時は折り返す */
 }
 
 .footer-link {
@@ -225,5 +229,117 @@ body {
 
   .footer-nav {
     gap: 14px;
+  }
+
+  /* ===============================
+   📱 全ページ共通レスポンシブ
+================================ */
+
+  /* タブレット */
+  @media (max-width: 1024px) {
+    .contact-button {
+      padding: 8px 20px;
+      font-size: 14px;
+      margin-right: 20px;
+    }
+
+    .footer-logo {
+      height: 120px;
+    }
+  }
+
+  /* スマホ */
+  @media (max-width: 768px) {
+
+    /* ヘッダー */
+    .contact-button {
+      display: none;
+    }
+
+    .header-inner {
+      padding: 10px 12px;
+    }
+
+    .header-logo img {
+      height: 40px;
+    }
+
+    /* フッター */
+    .footer-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 80px;
+    }
+
+    .footer-link {
+      margin-right: 0;
+      font-size: 12px;
+    }
+  }
+
+  /* 超スマホ */
+  @media (max-width: 480px) {
+    .footer-logo {
+      height: 60px;
+    }
+  }
+}
+
+/* ===============================
+   📱 各ページ用レスポンシブ
+================================ */
+
+/* トップカード */
+@media (max-width: 768px) {
+  .top-main_cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+}
+
+/* お知らせ */
+@media (max-width: 768px) {
+  .news-container {
+    padding: 20px;
+  }
+
+  .news-title {
+    font-size: 22px;
+  }
+}
+
+/* お問い合わせ */
+@media (max-width: 768px) {
+  .contact-main_top {
+    display: block;
+  }
+
+  .contact-main_col {
+    margin-bottom: 20px;
+  }
+
+  .contact-main_form {
+    padding: 0 16px;
+  }
+}
+
+/* アクセス */
+@media (max-width: 768px) {
+  .access-main_info2col {
+    display: block;
+  }
+
+  .access-main_busGrid {
+    display: block;
+  }
+
+  .access-main_busImage {
+    margin-top: 16px;
   }
 }
